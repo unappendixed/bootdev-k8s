@@ -19,10 +19,8 @@ spec:
           name: synergychat-web
           # ports:
           #   - containerPort: 8080
-          env:
-            - name: API_PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: synergychat-api-configmap
-                  key: API_PORT
+          envFrom:
+            - configMapRef:
+                name: synergychat-web-configmap
+
 
